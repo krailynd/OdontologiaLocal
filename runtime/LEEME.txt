@@ -1,0 +1,5 @@
+En esta carpeta el sistema guarda correos.log cuando trabaja en
+MODO_DEV (XAMPP local): ahí quedan escritos los correos que el
+sistema "envía" (código MFA, enlace de recuperación y avisos de
+citas) para que puedas practicar sin un servidor de correo real.
+No compartas ese archivo: puede contener códigos vigentes.

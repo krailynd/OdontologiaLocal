@@ -1,0 +1,55 @@
+# ==========================================
+# .gitignore — OdontologiaLocal
+# ==========================================
+
+# 1. Carpeta de credenciales y secretos extraídos (NUNCA SUBIR A GITHUB)
+Credencial/
+credencial/
+credentials/
+*.pem
+*.key
+*.cert
+*.p12
+
+# 1b. Credenciales y tokens de Google Cloud / APIs (en cualquier ruta)
+client_secret_*.json
+**/client_secret_*.json
+*client_secret*.json
+credentials.json
+credentials_*.json
+**/credentials.json
+service-account*.json
+token.json
+token_*.json
+**/config.local.php
+
+# 2. Archivos de configuración local y variables de entorno
+config/config.local.php
+acceso-google-2fa/config.local.php
+*.local.php
+.env
+.env.*
+!.env.example
+
+# 3. Base de datos embebida / binaria local
+.local-db/
+
+# 4. Archivos de registro y logs en runtime (contienen correos y datos temporales)
+runtime/*.log
+runtime/mariadb.pid
+runtime/mysql.sock
+!runtime/LEEME.txt
+
+# 5. Archivos temporales del sistema operativo y editores
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.sublime-workspace
+*.swp
+*~
+
+# 6. Dependencias futuras
+vendor/
+node_modules/

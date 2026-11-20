@@ -1,0 +1,122 @@
+/* Odontologia Local — estilos propios, sin frameworks CSS.
+   Paleta clínica: verde azulado (teal), blanco, grises suaves.
+   Formas redondeadas y separaciones limpias. */
+:root {
+    --teal: #0e7c7b;
+    --teal-oscuro: #0a5e5d;
+    --fondo: #f4f8f8;
+    --borde: #d7e5e5;
+    --texto: #20302f;
+    --rojo: #c0392b;
+    --verde: #1e8449;
+    --amarillo: #b7950b;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Segoe UI", system-ui, Arial, sans-serif; background: var(--fondo); color: var(--texto); }
+a { color: var(--teal-oscuro); }
+
+/* Barra superior con el menú principal */
+.barra { background: #fff; border-bottom: 3px solid var(--teal); display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-start; padding: 10px 18px; }
+.marca { font-size: 22px; font-weight: 700; color: var(--teal-oscuro); padding-top: 4px; }
+.menu { display: flex; flex-wrap: wrap; gap: 6px; flex: 1; }
+.menu a { text-decoration: none; padding: 6px 12px; border-radius: 12px; border: 1px solid var(--borde); color: var(--texto); font-weight: 600; background: #fbfdfd; }
+.menu a small { display: block; font-weight: 400; font-size: 11px; color: #6b807e; max-width: 170px; }
+.menu a.activo { background: var(--teal); color: #fff; border-color: var(--teal); }
+.menu a.activo small { color: #dff3f2; }
+.avatar { width: 38px; height: 38px; border-radius: 50%; border: 2px solid var(--teal); object-fit: cover; }
+/* Ventana emergente de bienvenida (recomienda activar el 2FA) */
+.modal-fondo { position: fixed; inset: 0; background: rgba(9, 45, 51, .55); display: flex; align-items: center; justify-content: center; z-index: 60; padding: 16px; }
+.modal-tarjeta { background: #fff; border-radius: 16px; max-width: 480px; width: 100%; padding: 28px; text-align: center; box-shadow: 0 18px 50px rgba(0,0,0,.35); border-top: 6px solid var(--teal); }
+.modal-icono { font-size: 44px; }
+.modal-tarjeta h2 { color: var(--oscuro); margin: 8px 0; }
+.modal-botones { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin: 16px 0 6px; }
+/* Caja de explicación dentro de cada pantalla (qué hace / qué no hace) */
+.info-pagina { background: #eef7f6; border: 1px solid #bfe0dc; border-radius: 10px; padding: 10px 14px; margin: 0 0 16px; font-size: .92rem; }
+.info-pagina summary { cursor: pointer; font-weight: 700; color: var(--oscuro); }
+.info-pagina ul { margin: 8px 0 2px; padding-left: 18px; }
+.info-pagina code { background: #fff; padding: 0 4px; border-radius: 4px; }
+.sesion { display: flex; align-items: center; gap: 10px; }
+.sesion span { font-weight: 600; text-align: right; }
+.sesion span small { display: block; font-weight: 400; color: #6b807e; }
+
+.contenedor { max-width: 1150px; margin: 22px auto; padding: 0 16px 30px; }
+.pie { text-align: center; color: #6b807e; font-size: 13px; padding: 18px; }
+
+h1 { font-size: 26px; margin: 6px 0 12px; }
+h2 { font-size: 20px; margin: 22px 0 10px; }
+.ayuda { color: #51706e; }
+.chico-texto { font-size: 12px; word-break: break-all; }
+
+/* Botones */
+.boton { display: inline-block; background: var(--teal); color: #fff; border: none; border-radius: 10px; padding: 9px 16px; font-size: 15px; cursor: pointer; text-decoration: none; }
+.boton:hover { background: var(--teal-oscuro); }
+.boton.secundario { background: #e8f1f1; color: var(--teal-oscuro); border: 1px solid var(--borde); }
+.boton.peligro { background: var(--rojo); }
+.boton.chico { padding: 5px 10px; font-size: 13px; border-radius: 8px; }
+.boton.grande { width: 100%; padding: 12px; font-size: 16px; margin-top: 6px; }
+.boton.salir { background: #fff; color: var(--rojo); border: 1px solid var(--rojo); }
+.boton.google { width: 100%; text-align: center; background: #fff; color: #3c4043; border: 1px solid #dadce0; font-weight: 600; }
+.boton.google.desactivado { opacity: .65; }
+form.en-linea { display: inline; }
+
+/* Flash (mensajes de una sola vista) */
+.flash { border-radius: 12px; padding: 12px 16px; margin: 12px 0; border: 1px solid; }
+.flash.ok { background: #eafaf1; border-color: var(--verde); color: var(--verde); }
+.flash.error { background: #fdedec; border-color: var(--rojo); color: var(--rojo); }
+.flash.aviso { background: #fef9e7; border-color: var(--amarillo); color: #7d6608; }
+
+/* Formularios */
+.formulario label { display: block; margin: 12px 0; font-weight: 600; }
+.formulario input, .formulario select, .formulario textarea {
+    width: 100%; padding: 10px; margin-top: 5px; border: 1px solid var(--borde);
+    border-radius: 10px; font: inherit; background: #fff; font-weight: 400;
+}
+.formulario.ancho { max-width: 640px; }
+.formulario fieldset { border: 1px solid var(--borde); border-radius: 12px; margin: 14px 0; }
+.codigo-mfa { font-size: 26px; letter-spacing: 8px; text-align: center; }
+.fila-linea { display: flex; gap: 8px; }
+.buscador { display: flex; gap: 8px; margin: 10px 0; }
+.buscador input { flex: 1; padding: 10px; border: 1px solid var(--borde); border-radius: 10px; font: inherit; }
+
+/* Tablas */
+.tabla { width: 100%; border-collapse: collapse; background: #fff; border-radius: 12px; overflow: hidden; }
+.tabla th, .tabla td { border: 1px solid var(--borde); padding: 9px 11px; text-align: left; vertical-align: top; }
+.tabla th { background: #e8f3f3; }
+.tabla td.acciones { white-space: nowrap; }
+.tabla td.acciones .boton { margin: 2px 0; }
+
+/* Chips de estado y método */
+.chip { display: inline-block; background: #e8f1f1; border: 1px solid var(--borde); border-radius: 20px; padding: 2px 10px; font-size: 12.5px; font-weight: 700; }
+.chip.get { background: #eaf2f8; }
+.chip.post { background: #fdecea; }
+.estado-pendiente { background: #fef9e7; }
+.estado-confirmada { background: #eaf2f8; }
+.estado-atendida, .estado-pagada { background: #eafaf1; }
+.estado-cancelada, .estado-anulada { background: #fdedec; }
+
+/* Tarjetas */
+.tarjetas { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 14px 0; }
+.tarjeta { background: #fff; border: 1px solid var(--borde); border-radius: 14px; padding: 16px; }
+.tarjeta strong { display: block; font-size: 26px; color: var(--teal-oscuro); }
+.tarjeta-detalle { background: #fff; border: 1px solid var(--borde); border-radius: 14px; padding: 18px; margin: 16px 0; }
+.registro { background: #fff; border: 1px solid var(--borde); border-left: 5px solid var(--teal); border-radius: 12px; padding: 14px 16px; margin: 12px 0; }
+.registro p { margin: 5px 0; }
+.lista-simple { background: #fff; border: 1px solid var(--borde); border-radius: 12px; padding: 12px 12px 12px 34px; }
+.lista-simple li { margin: 7px 0; }
+.nota { background: #eef6f6; border: 1px dashed var(--teal); border-radius: 12px; padding: 12px 16px; margin-top: 16px; }
+.totales { text-align: right; font-size: 16px; line-height: 1.7; }
+
+/* Pantallas de acceso (sin sesión) */
+.fondo-acceso { background: linear-gradient(160deg, #e8f3f3, #f9fcfc); min-height: 100vh; display: flex; align-items: flex-start; justify-content: center; padding: 34px 14px; }
+.tarjeta-acceso { background: #fff; width: 100%; max-width: 480px; border: 1px solid var(--borde); border-radius: 18px; padding: 26px; box-shadow: 0 10px 30px rgba(10, 94, 93, .10); }
+.marca-centro { text-align: center; font-size: 26px; font-weight: 700; color: var(--teal-oscuro); margin-bottom: 6px; }
+.tarjeta-acceso h1 { text-align: center; font-size: 22px; }
+.separador { text-align: center; border-top: 1px solid var(--borde); margin: 20px 0 14px; }
+.separador span { background: #fff; padding: 0 10px; position: relative; top: -10px; color: #6b807e; }
+.enlaces { text-align: center; margin-top: 16px; }
+.demo { margin-top: 18px; background: #f7fafa; border: 1px solid var(--borde); border-radius: 12px; padding: 10px 14px; }
+.demo code, code { background: #eef3f3; padding: 1px 6px; border-radius: 6px; }
+.qr-caja { display: flex; gap: 18px; flex-wrap: wrap; align-items: flex-start; }
+.qr-caja #qr { background: #fff; padding: 8px; border: 1px solid var(--borde); border-radius: 12px; }
+.secreto { font-size: 17px; letter-spacing: 2px; font-weight: 700; }
+@media (max-width: 700px) { .tabla { font-size: 13.5px; } .menu a small { display: none; } }

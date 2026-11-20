@@ -1,0 +1,7 @@
+# Blindaje a nivel Apache (XAMPP):
+# - Sin listado de directorios: nadie puede ver qué archivos hay.
+Options -Indexes
+# - Los archivos sensibles nunca se sirven por web, estén donde estén.
+<FilesMatch "\.(sql|log|md|json)$">
+    Require all denied
+</FilesMatch>

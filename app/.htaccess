@@ -1,0 +1,3 @@
+# Nadie puede abrir los archivos de app/ directamente por el navegador:
+# todo pasa por index.php (el Front Controller).
+Require all denied
